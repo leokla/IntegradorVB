@@ -12,7 +12,7 @@ public class GenericEntity implements Serializable{
     private Long id;
     private int version;
     private Date created = new Date();
-    private Date finished = new Date();
+    private Date finished = null;
     private int lock = 0;
     private String additionalContent = null;
 
@@ -64,15 +64,15 @@ public class GenericEntity implements Serializable{
     public Date getFinished() {
         return this.finished;
     }
-    protected void setFinished(Date finished) {
+    public void setFinished(Date finished) {
         this.finished = finished;
     }
 
-    @PrePersist
-    @PreUpdate
-    protected void updateModifiedDate() {
-        finished = new Date();
-    }
+//    @PrePersist
+//    @PreUpdate
+//    protected void updateModifiedDate() {
+//        finished = new Date();
+//    }
 
     public String getAdditionalContent() {
         return this.additionalContent;
