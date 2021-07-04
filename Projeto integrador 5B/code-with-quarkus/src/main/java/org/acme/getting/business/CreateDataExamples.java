@@ -53,7 +53,7 @@ public class CreateDataExamples {
         positionPick01.setPickFromLocatioNname("A01-01-01-09");
         positionPick01.setPickingOrderNumber(pickingOrder1.getNumber());
         positionPick01.setPickingOrder(pickingOrder1);
-        positionPick01.setFinished(new Date(c.getTimeInMillis()+4550));
+        positionPick01.setFinished(new Date(c.getTimeInMillis()+45500));
         em.persist(positionPick01);
 
 
@@ -86,7 +86,7 @@ public class CreateDataExamples {
         positionPick02.setPickFromLocatioNname("A02-01-01-01");
         positionPick02.setPickingOrderNumber(pickingOrder2.getNumber());
         positionPick02.setPickingOrder(pickingOrder2);
-        positionPick02.setFinished(new Date(c.getTimeInMillis()+10000));
+        positionPick02.setFinished(new Date(c.getTimeInMillis()+100000));
         em.persist(positionPick02);
 
 
@@ -119,7 +119,7 @@ public class CreateDataExamples {
         positionPick03.setPickFromLocatioNname("A08-01-02-01");
         positionPick03.setPickingOrderNumber(pickingOrder3.getNumber());
         positionPick03.setPickingOrder(pickingOrder3);
-        positionPick03.setFinished(new Date(c.getTimeInMillis()+2200));
+        positionPick03.setFinished(new Date(c.getTimeInMillis()+22000));
         em.persist(positionPick03);
 
 
@@ -153,7 +153,7 @@ public class CreateDataExamples {
         positionPick04.setPickFromLocatioNname("A03-02-02-01");
         positionPick04.setPickingOrderNumber(pickingOrder4.getNumber());
         positionPick04.setPickingOrder(pickingOrder4);
-        positionPick04.setFinished(new Date(c.getTimeInMillis() + 3600));
+        positionPick04.setFinished(new Date(c.getTimeInMillis() + 36000));
         em.persist(positionPick04);
 
 

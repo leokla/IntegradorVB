@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Transactional
@@ -22,6 +23,7 @@ public class OperatorPerformBusiness {
 
         Calendar c = Calendar.getInstance(TimeZone.getDefault(), Locale.getDefault());
         OperatorPerformResponse response = new OperatorPerformResponse();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss");
 
         String sql = "SELECT pos FROM " + Position.class.getSimpleName() + " pos ";
         Query query = em.createQuery(sql);
@@ -34,13 +36,12 @@ public class OperatorPerformBusiness {
             operatorPerform = stringOperatorPerformMap.get(pos.getPickingOrder().getOperator());
             if(operatorPerform == null){
                 operatorPerform = new OperatorPerform();
+                operatorPerform.setOperatorName(pos.getPickingOrder().getOperator());
             }
-            if(operatorPerform.getPickingTime() == null)
-                operatorPerform.setPickingTime(new Date(pos.getFinished().getTime() - pos.getCreated().getTime()));
-            else{
-                operatorPerform.setPickingTime(
-                        new Date(operatorPerform.getPickingTime().getTime() + (pos.getFinished().getTime() - pos.getCreated().getTime())));
+            if(operatorPerform.getPickingTime() == null) {
+                operatorPerform.setPickingTime(simpleDateFormat.format(new Date(pos.getFinished().getTime() - pos.getCreated().getTime())));
             }
+
             operatorPerform.setAmountPicked(operatorPerform.getAmountPicked() + pos.getAmountPicked());
             stringOperatorPerformMap.put(pos.getPickingOrder().getOperator(), operatorPerform);
 

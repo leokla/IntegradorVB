@@ -2,6 +2,7 @@ package org.acme.getting.started;
 
 import org.acme.getting.business.CreateDataExamples;
 import org.acme.getting.business.DayAmountBusiness;
+import org.acme.getting.business.OperatorPerformBusiness;
 import org.acme.getting.business.OrderDayBusiness;
 import org.acme.getting.database.Order;
 import org.acme.getting.model.DayAmount;
@@ -23,6 +24,8 @@ public class GreetingResource extends GenericComunication {
     DayAmountBusiness dayAmountBusiness;
     @Inject
     OrderDayBusiness orderDayBusiness;
+    @Inject
+    OperatorPerformBusiness operatorPerformBusiness;
 
     @GET
     @Path("dayAmount")
@@ -43,7 +46,7 @@ public class GreetingResource extends GenericComunication {
     @Path("operatorPerform")
     @Produces(MediaType.APPLICATION_JSON)
     public String operatorPerform() {
-        return gson.toJson("operatorPerform");
+        return gson.toJson(operatorPerformBusiness.getPerform());
     }
 
     @GET

@@ -5,7 +5,7 @@ import java.util.Date;
 public class OperatorPerform {
 
     private String operatorName;
-    private Date pickingTime = null;
+    private String pickingTime = null;
     private Double amountPicked = 0.0;
 
     public String getOperatorName() {
@@ -16,11 +16,11 @@ public class OperatorPerform {
         this.operatorName = operatorName;
     }
 
-    public Date getPickingTime() {
+    public String getPickingTime() {
         return pickingTime;
     }
 
-    public void setPickingTime(Date pickingTime) {
+    public void setPickingTime(String pickingTime) {
         this.pickingTime = pickingTime;
     }
 
