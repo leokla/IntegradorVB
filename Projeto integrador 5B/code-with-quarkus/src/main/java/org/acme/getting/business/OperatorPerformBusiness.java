@@ -19,10 +19,11 @@ public class OperatorPerformBusiness {
     @PersistenceContext
     EntityManager em;
 
-    public OperatorPerformResponse getPerform(){
+    public List<OperatorPerform> getPerform(){
 
         Calendar c = Calendar.getInstance(TimeZone.getDefault(), Locale.getDefault());
-        OperatorPerformResponse response = new OperatorPerformResponse();
+        //OperatorPerformResponse response = new OperatorPerformResponse();
+        List<OperatorPerform> operatorPerformList = new ArrayList<>();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss");
 
         String sql = "SELECT pos FROM " + Position.class.getSimpleName() + " pos ";
@@ -47,8 +48,8 @@ public class OperatorPerformBusiness {
 
         });
 
-        response.getOperatorPerformList().addAll(stringOperatorPerformMap.values());
-        return response;
+        operatorPerformList.addAll(stringOperatorPerformMap.values());
+        return operatorPerformList;
     }
 
 }

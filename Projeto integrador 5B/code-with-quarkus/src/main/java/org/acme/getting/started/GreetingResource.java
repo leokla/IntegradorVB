@@ -38,7 +38,7 @@ public class GreetingResource extends GenericComunication {
     @Path("dayOrder")
     @Produces(MediaType.APPLICATION_JSON)
     public String dayOrder() {
-        return gson.toJson(new DayOrder(orderDayBusiness.getDayOrder().intValue()));
+        return gson.toJson(orderDayBusiness.getDayOrder());
     }
 
 

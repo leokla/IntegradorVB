@@ -31,7 +31,7 @@ public class CreateDataExamples {
         o1.setNumber("ORDER000001");
         o1.setPrio(10);
         o1.setExternalId("0328947982754");
-        o1.setState(100);
+        o1.setState(600);
         o1.setLock(0);
         em.persist(o1);
 
@@ -64,7 +64,7 @@ public class CreateDataExamples {
         o2.setNumber("ORDER000002");
         o2.setPrio(9);
         o2.setExternalId("0437564");
-        o2.setState(75);
+        o2.setState(600);
         o2.setLock(0);
         em.persist(o2);
 
@@ -97,7 +97,7 @@ public class CreateDataExamples {
         o3.setNumber("ORDER000003");
         o3.setPrio(10);
         o3.setExternalId("4576375476");
-        o3.setState(100);
+        o3.setState(600);
         o3.setLock(0);
         em.persist(o3);
 
@@ -131,7 +131,7 @@ public class CreateDataExamples {
         o4.setNumber("ORDER000004");
         o4.setPrio(10);
         o4.setExternalId("565438747");
-        o4.setState(50);
+        o4.setState(0);
         o4.setLock(0);
         em.persist(o4);
 
